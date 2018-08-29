@@ -7,13 +7,13 @@ def reflexao (mat , m , n ,eixo):
     x = lambda x : x
     y = lambda y : y
     saida = np.zeros([m,n])
-    if eixo == 'x':
+    if eixo == 1 :
         x = lambda x: m -1 -x
     else:
-        y = lambda y: m -1 - y 
+        y = lambda y: n-1 -y 
     for i in range(m):
         for j in range(n):
-            saida[x(i),y(j)] = mat[i,j]
+            saida[i,j] = mat[x(i),y(j)]
     img  = Image.fromarray(saida)
     Image._show(img)
 
@@ -50,8 +50,8 @@ if __name__ == '__main__':
     #Image._show(img)
     img  = img.convert('L')
     matriz = np.asarray(img)
-    eixo = input("informe o eixo: x ou y ")
+    eixo = input("informe o eixo: x = 1 e y = 0")
     m,n = matriz.shape
     print("m: {} n: {}".format(m , n))
     #rotacao(matriz,m,n,int(eixo))
-    reflexao(matriz,m,n,eixo)
+    reflexao(matriz,m,n,int(eixo))
