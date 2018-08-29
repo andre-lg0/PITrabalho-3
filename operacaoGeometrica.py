@@ -18,7 +18,7 @@ def reflexao (mat , m , n ,eixo):
     Image._show(img)
 
 
-''' def rotacao(mat, m , n , angulo):
+'''def rotacao(mat, m , n , angulo):
    # usando centro da imagem utilizado como centro de rotação
     x0  = 0.5 * (m)
     y0  = 0.5 * (n)
@@ -39,11 +39,11 @@ def reflexao (mat , m , n ,eixo):
                 saida[i,j] = mat[xb,yb]
     img = Image.fromarray(saida)
     Image._show(img)
- 
+ '''
 
 
 
-'''
+
 
 if __name__ == '__main__':
     img  = Image.open('bolo1.jpg')
@@ -53,8 +53,12 @@ if __name__ == '__main__':
     while(True):
         print("1: reflexao no eixo x")
         print("2: reflexao no eixo y")
+        print("0: sair")
         eixo = input()
-        m,n = matriz.shape
-        print("m: {} n: {}".format(m , n))
-        #rotacao(matriz,m,n,int(eixo))
-        reflexao(matriz,m,n,int(eixo))
+        if eixo =='0':
+            break
+        else:  
+            m,n = matriz.shape
+            print("m: {} n: {}".format(m , n))
+            #rotacao(matriz,m,n,int(eixo))
+            reflexao(matriz,m,n,int(eixo))

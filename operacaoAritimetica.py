@@ -44,5 +44,13 @@ if __name__ == '__main__':
 	m, n  = matriz1.shape
 	print("numero de linhas {}".format(m))
 	print("numero de colunas {}".format(n))
-	soma(matriz1,matriz2,m,n)
-	#subitracao(matriz1,matriz2,m,n)
+	while(True):
+		print('menu')
+		print('1: soma \n2: subitracao \n0 sair')
+		opcao = input()
+		if opcao == '1':	
+			soma(matriz1,matriz2,m,n)
+		elif opcao == '2':
+			subitracao(matriz1,matriz2,m,n)
+		else:
+			break
