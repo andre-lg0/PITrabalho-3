@@ -50,8 +50,11 @@ if __name__ == '__main__':
     #Image._show(img)
     img  = img.convert('L')
     matriz = np.asarray(img)
-    eixo = input("informe o eixo: x = 1 e y = 0")
-    m,n = matriz.shape
-    print("m: {} n: {}".format(m , n))
-    #rotacao(matriz,m,n,int(eixo))
-    reflexao(matriz,m,n,int(eixo))
+    while(True):
+        print("1: reflexao no eixo x")
+        print("2: reflexao no eixo y")
+        eixo = input()
+        m,n = matriz.shape
+        print("m: {} n: {}".format(m , n))
+        #rotacao(matriz,m,n,int(eixo))
+        reflexao(matriz,m,n,int(eixo))
